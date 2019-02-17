@@ -1,2 +1,2 @@
 # Board
-free Bulletin board with .NET Framework
+free simple bulletin board with .NET Framework
