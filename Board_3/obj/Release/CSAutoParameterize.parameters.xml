@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="BDBContext-Web.config Connection String" description="BDBContext データベースに接続するためにアプリケーションによって web.config で使用される接続文字列。" defaultValue="data source=training-bulletin.database.windows.net;initial catalog=&quot;Bulletin board&quot;;persist security info=True;user id=Naoki;password=7FY24v8hYS;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\naoki\\source\\repos\\Board_3\\Board_3\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BDBContext']/@connectionString" />
+  </parameter>
+</parameters>

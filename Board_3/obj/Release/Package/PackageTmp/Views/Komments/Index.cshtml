@@ -1,0 +1,39 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Board_3.Models.Komment>
+
+@{
+    ViewBag.Title = "Index";
+    var nowAccount = (Board_3.Models.Account)Session["Account"];
+}
+
+<h2>タイムライン</h2>
+
+<p>
+    @Html.ActionLink("投稿", "Create")
+</p>
+@foreach (var item in Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                @Html.DisplayFor(modelItem => item.Account.Name)　@Html.DisplayFor(modelItem => item.Created)
+                @if (item.AccountId == nowAccount.AccountId)
+                {
+                    @Html.ActionLink("×", "Delete", new { id = item.KommentId }, new { @class = "pull-right" })
+                    @Html.ActionLink("編集", "Edit", new { id = item.KommentId }, new { @class = "pull-right" })
+                }
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div style="white-space: pre;">@Html.DisplayFor(modelItem => item.Body)</div>
+        </div>
+    </div>
+}
+
+<div>
+    Page: @Model.PageNumber / @Model.PageCount
+</div>
+
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("Index", "page" + page))
+</div>
